@@ -1,282 +1,309 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Request Data Deletion — Berg</title>
-  <meta name="description" content="Submit a request to delete your Berg account and all associated personal data." />
-  <link rel="canonical" href="https://berg.app/delete-data" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    .delete-page {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 60px 24px 100px;
-    }
-    .delete-page h1 {
-      font-family: var(--ff-head);
-      font-size: clamp(28px, 4vw, 40px);
-      font-style: italic;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-    .delete-page .subtitle {
-      font-size: 15px;
-      color: var(--text-sec);
-      line-height: 1.7;
-      margin-bottom: 32px;
-    }
-    .notice {
-      background: rgba(255,107,53,0.07);
-      border-left: 3px solid var(--primary);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 14px 18px;
-      margin-bottom: 32px;
-      font-size: 14px;
-      color: var(--text-sec);
-      line-height: 1.65;
-    }
-    .notice strong { color: var(--text); }
-    .form-group { margin-bottom: 20px; }
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 7px;
-    }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-md);
-      font-family: var(--ff-body);
-      font-size: 15px;
-      color: var(--text);
-      background: #fff;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--primary);
-    }
-    .form-group textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-md);
-      font-family: var(--ff-body);
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.15s, opacity 0.15s;
-    }
-    .submit-btn:hover { background: var(--primary-dk); }
-    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .success-box {
-      display: none;
-      background: rgba(34,197,94,0.08);
-      border: 1.5px solid rgba(34,197,94,0.3);
-      border-radius: var(--radius-md);
-      padding: 20px 22px;
-      text-align: center;
-    }
-    .success-box h2 {
-      font-family: var(--ff-head);
-      font-size: 20px;
-      font-style: italic;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .success-box p {
-      font-size: 14px;
-      color: var(--text-sec);
-      line-height: 1.65;
-    }
-    .error-msg {
-      display: none;
-      color: #dc2626;
-      font-size: 13px;
-      margin-top: 10px;
-    }
-    .data-list {
-      margin: 16px 0 0 20px;
-    }
-    .data-list li {
-      font-size: 14px;
-      color: var(--text-sec);
-      line-height: 1.7;
-      margin-bottom: 4px;
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-wordmark" aria-label="Berg home">BERG</a>
-      <div class="nav-links">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Data Deletion — Berg</title>
+    <meta
+      name="description"
+      content="Submit a request to delete your Berg account and all associated personal data." />
+    <link rel="canonical" href="https://joinberg.app/delete-data" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .delete-page {
+        max-width: 560px;
+        margin: 0 auto;
+        padding: 60px 24px 100px;
+      }
+      .delete-page h1 {
+        font-family: var(--ff-head);
+        font-size: clamp(28px, 4vw, 40px);
+        font-style: italic;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 12px;
+      }
+      .delete-page .subtitle {
+        font-size: 15px;
+        color: var(--text-sec);
+        line-height: 1.7;
+        margin-bottom: 32px;
+      }
+      .notice {
+        background: rgba(255, 107, 53, 0.07);
+        border-left: 3px solid var(--primary);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        padding: 14px 18px;
+        margin-bottom: 32px;
+        font-size: 14px;
+        color: var(--text-sec);
+        line-height: 1.65;
+      }
+      .notice strong {
+        color: var(--text);
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 7px;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius-md);
+        font-family: var(--ff-body);
+        font-size: 15px;
+        color: var(--text);
+        background: #fff;
+        outline: none;
+        transition: border-color 0.15s;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: var(--primary);
+      }
+      .form-group textarea {
+        min-height: 90px;
+        resize: vertical;
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        border-radius: var(--radius-md);
+        font-family: var(--ff-body);
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background 0.15s,
+          opacity 0.15s;
+      }
+      .submit-btn:hover {
+        background: var(--primary-dk);
+      }
+      .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .success-box {
+        display: none;
+        background: rgba(34, 197, 94, 0.08);
+        border: 1.5px solid rgba(34, 197, 94, 0.3);
+        border-radius: var(--radius-md);
+        padding: 20px 22px;
+        text-align: center;
+      }
+      .success-box h2 {
+        font-family: var(--ff-head);
+        font-size: 20px;
+        font-style: italic;
+        color: var(--text);
+        margin-bottom: 8px;
+      }
+      .success-box p {
+        font-size: 14px;
+        color: var(--text-sec);
+        line-height: 1.65;
+      }
+      .error-msg {
+        display: none;
+        color: #dc2626;
+        font-size: 13px;
+        margin-top: 10px;
+      }
+      .data-list {
+        margin: 16px 0 0 20px;
+      }
+      .data-list li {
+        font-size: 14px;
+        color: var(--text-sec);
+        line-height: 1.7;
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-wordmark" aria-label="Berg home"
+          >BERG</a
+        >
+        <div class="nav-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:support@joinberg.app">Support</a>
+        </div>
+        <a href="index.html#download" class="nav-cta">Get the app</a>
+        <button
+          class="nav-hamburger"
+          aria-label="Open menu"
+          aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-mobile" aria-hidden="true">
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
         <a href="mailto:support@joinberg.app">Support</a>
+        <a href="index.html#download" class="nav-mobile-cta">Get the app</a>
       </div>
-      <a href="index.html#download" class="nav-cta">Get the app</a>
-      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav-mobile" aria-hidden="true">
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-      <a href="mailto:support@joinberg.app">Support</a>
-      <a href="index.html#download" class="nav-mobile-cta">Get the app</a>
-    </div>
-  </nav>
+    </nav>
 
-  <main>
-    <div class="delete-page">
-
-      <h1>Request data deletion</h1>
-      <p class="subtitle">
-        Under GDPR and applicable privacy laws, you have the right to request deletion
-        of your personal data. Submit your email below and we will process your request
-        within 30 days.
-      </p>
-
-      <div class="notice">
-        <strong>What gets deleted:</strong> your profile, phone number, email, connections,
-        motives, messages, memories, prompt responses, and any other personal data associated
-        with your account.<br><br>
-        If you have the Berg app installed, you can also delete your account instantly from
-        <strong>Settings → Delete account</strong>.
-      </div>
-
-      <p style="font-size:14px;color:var(--text-sec);margin-bottom:6px;">The following data will be permanently deleted:</p>
-      <ul class="data-list">
-        <li>Profile information (name, email, phone number, bio, photo)</li>
-        <li>Connections and friend requests</li>
-        <li>Motives you created and RSVPs</li>
-        <li>Messages and chat history</li>
-        <li>Memories and uploaded photos</li>
-        <li>Daily prompt responses</li>
-        <li>Notification history</li>
-      </ul>
-
-      <br>
-
-      <form id="deleteForm">
-        <div class="form-group">
-          <label for="email">Email address associated with your Berg account</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="you@example.com"
-            autocomplete="email"
-          />
-        </div>
-        <div class="form-group">
-          <label for="reason">Reason (optional)</label>
-          <textarea
-            id="reason"
-            name="reason"
-            placeholder="Let us know why you're leaving (optional)"
-            maxlength="500"
-          ></textarea>
-        </div>
-        <button type="submit" class="submit-btn" id="submitBtn">
-          Submit deletion request
-        </button>
-        <p class="error-msg" id="errorMsg">Something went wrong. Please email us at <a href="mailto:support@joinberg.app">support@joinberg.app</a>.</p>
-      </form>
-
-      <div class="success-box" id="successBox">
-        <h2>Request received</h2>
-        <p>
-          We've received your deletion request and will process it within 30 days.
-          You'll receive a confirmation email at the address you provided.
+    <main>
+      <div class="delete-page">
+        <h1>Request data deletion</h1>
+        <p class="subtitle">
+          Under GDPR and applicable privacy laws, you have the right to request
+          deletion of your personal data. Submit your email below and we will
+          process your request within 30 days.
         </p>
+
+        <div class="notice">
+          <strong>What gets deleted:</strong> your profile, phone number, email,
+          connections, motives, messages, memories, prompt responses, and any
+          other personal data associated with your account.<br /><br />
+          If you have the Berg app installed, you can also delete your account
+          instantly from
+          <strong>Settings → Delete account</strong>.
+        </div>
+
+        <p style="font-size: 14px; color: var(--text-sec); margin-bottom: 6px">
+          The following data will be permanently deleted:
+        </p>
+        <ul class="data-list">
+          <li>Profile information (name, email, phone number, bio, photo)</li>
+          <li>Connections and friend requests</li>
+          <li>Motives you created and RSVPs</li>
+          <li>Messages and chat history</li>
+          <li>Memories and uploaded photos</li>
+          <li>Daily prompt responses</li>
+          <li>Notification history</li>
+        </ul>
+
+        <br />
+
+        <form id="deleteForm">
+          <div class="form-group">
+            <label for="email"
+              >Email address associated with your Berg account</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+              autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="reason">Reason (optional)</label>
+            <textarea
+              id="reason"
+              name="reason"
+              placeholder="Let us know why you're leaving (optional)"
+              maxlength="500"></textarea>
+          </div>
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Submit deletion request
+          </button>
+          <p class="error-msg" id="errorMsg">
+            Something went wrong. Please email us at
+            <a href="mailto:support@joinberg.app">support@joinberg.app</a>.
+          </p>
+        </form>
+
+        <div class="success-box" id="successBox">
+          <h2>Request received</h2>
+          <p>
+            We've received your deletion request and will process it within 30
+            days. You'll receive a confirmation email at the address you
+            provided.
+          </p>
+        </div>
       </div>
+    </main>
 
-    </div>
-  </main>
-
-  <footer class="footer" aria-label="Site footer">
-    <div class="footer-body">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-wordmark" aria-label="Berg home">BERG</a>
-        <p class="footer-tagline">The group chat that becomes<br />the real thing.</p>
+    <footer class="footer" aria-label="Site footer">
+      <div class="footer-body">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-wordmark" aria-label="Berg home"
+            >BERG</a
+          >
+          <p class="footer-tagline">
+            The group chat that becomes<br />the real thing.
+          </p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Product</p>
+          <a href="index.html#download">Download</a>
+          <a href="mailto:support@joinberg.app">Support</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Legal</p>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="delete-data.html">Delete My Data</a>
+        </div>
       </div>
-      <div class="footer-col">
-        <p class="footer-col-label">Product</p>
-        <a href="index.html#download">Download</a>
-        <a href="mailto:support@joinberg.app">Support</a>
+      <div class="footer-base">
+        <p>© 2025 Berg. All rights reserved.</p>
       </div>
-      <div class="footer-col">
-        <p class="footer-col-label">Legal</p>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="delete-data.html">Delete My Data</a>
-      </div>
-    </div>
-    <div class="footer-base">
-      <p>© 2025 Berg. All rights reserved.</p>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    // Mobile nav
-    const hamburger = document.querySelector('.nav-hamburger');
-    const mobileNav = document.querySelector('.nav-mobile');
-    hamburger.addEventListener('click', () => {
-      const open = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!open));
-      mobileNav.setAttribute('aria-hidden', String(open));
-      hamburger.classList.toggle('open');
-      mobileNav.classList.toggle('open');
-    });
+    <script>
+      // Mobile nav
+      const hamburger = document.querySelector(".nav-hamburger");
+      const mobileNav = document.querySelector(".nav-mobile");
+      hamburger.addEventListener("click", () => {
+        const open = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", String(!open));
+        mobileNav.setAttribute("aria-hidden", String(open));
+        hamburger.classList.toggle("open");
+        mobileNav.classList.toggle("open");
+      });
 
-    const API_URL = 'https://berg-api.onrender.com';
+      const API_URL = "https://berg-api.onrender.com";
 
-    document.getElementById('deleteForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const reason = document.getElementById('reason').value.trim();
-      const btn = document.getElementById('submitBtn');
-      const errMsg = document.getElementById('errorMsg');
+      document
+        .getElementById("deleteForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const email = document.getElementById("email").value.trim();
+          const reason = document.getElementById("reason").value.trim();
+          const btn = document.getElementById("submitBtn");
+          const errMsg = document.getElementById("errorMsg");
 
-      btn.disabled = true;
-      btn.textContent = 'Submitting…';
-      errMsg.style.display = 'none';
+          btn.disabled = true;
+          btn.textContent = "Submitting…";
+          errMsg.style.display = "none";
 
-      try {
-        const res = await fetch(`${API_URL}/api/users/deletion-request`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, reason: reason || undefined }),
+          try {
+            const res = await fetch(`${API_URL}/api/users/deletion-request`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email, reason: reason || undefined }),
+            });
+
+            if (!res.ok) throw new Error("Request failed");
+
+            document.getElementById("deleteForm").style.display = "none";
+            document.getElementById("successBox").style.display = "block";
+          } catch {
+            btn.disabled = false;
+            btn.textContent = "Submit deletion request";
+            errMsg.style.display = "block";
+          }
         });
-
-        if (!res.ok) throw new Error('Request failed');
-
-        document.getElementById('deleteForm').style.display = 'none';
-        document.getElementById('successBox').style.display = 'block';
-      } catch {
-        btn.disabled = false;
-        btn.textContent = 'Submit deletion request';
-        errMsg.style.display = 'block';
-      }
-    });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "4QV5DGH3P2.app.berg.social"
+        ],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "Berg invite links"
+          }
+        ]
+      }
+    ]
+  }
+}

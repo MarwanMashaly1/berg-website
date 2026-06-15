@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.berg.social",
+      "sha256_cert_fingerprints": [
+        "90:90:DD:B0:0D:54:1F:7C:76:92:72:DE:23:FA:FE:33:9D:4B:DD:B3:CE:1E:20:7A:23:CB:F3:4E:8A:C5:86:D4"
+      ]
+    }
+  }
+]

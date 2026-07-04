@@ -16,10 +16,10 @@
         padding: 60px 24px 100px;
       }
       .delete-page h1 {
-        font-family: var(--ff-head);
+        font-family: var(--ff-serif);
         font-size: clamp(28px, 4vw, 40px);
         font-style: italic;
-        font-weight: 600;
+        font-weight: 500;
         color: var(--text);
         margin-bottom: 12px;
       }
@@ -31,8 +31,8 @@
       }
       .notice {
         background: rgba(255, 107, 53, 0.07);
-        border-left: 3px solid var(--primary);
-        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        border-left: 3px solid var(--accent);
+        border-radius: 0 8px 8px 0;
         padding: 14px 18px;
         margin-bottom: 32px;
         font-size: 14px;
@@ -57,7 +57,7 @@
         width: 100%;
         padding: 12px 14px;
         border: 1.5px solid var(--border);
-        border-radius: var(--radius-md);
+        border-radius: 12px;
         font-family: var(--ff-body);
         font-size: 15px;
         color: var(--text);
@@ -67,7 +67,7 @@
       }
       .form-group input:focus,
       .form-group textarea:focus {
-        border-color: var(--primary);
+        border-color: var(--accent);
       }
       .form-group textarea {
         min-height: 90px;
@@ -76,10 +76,10 @@
       .submit-btn {
         width: 100%;
         padding: 14px;
-        background: var(--primary);
+        background: var(--accent);
         color: #fff;
         border: none;
-        border-radius: var(--radius-md);
+        border-radius: 12px;
         font-family: var(--ff-body);
         font-size: 15px;
         font-weight: 600;
@@ -89,7 +89,7 @@
           opacity 0.15s;
       }
       .submit-btn:hover {
-        background: var(--primary-dk);
+        background: #cc5233;
       }
       .submit-btn:disabled {
         opacity: 0.6;
@@ -99,12 +99,12 @@
         display: none;
         background: rgba(34, 197, 94, 0.08);
         border: 1.5px solid rgba(34, 197, 94, 0.3);
-        border-radius: var(--radius-md);
+        border-radius: 12px;
         padding: 20px 22px;
         text-align: center;
       }
       .success-box h2 {
-        font-family: var(--ff-head);
+        font-family: var(--ff-serif);
         font-size: 20px;
         font-style: italic;
         color: var(--text);
@@ -135,27 +135,27 @@
   <body>
     <nav class="nav" aria-label="Main navigation">
       <div class="nav-inner">
-        <a href="index.html" class="nav-wordmark" aria-label="Berg home"
-          >BERG</a
-        >
+        <div class="nav-brand">
+          <a href="index.html" style="color:inherit;text-decoration:none;"><span class="nav-wordmark">Berg</span></a>
+          <span class="nav-edition">No. 214 · Est. 2026</span>
+        </div>
         <div class="nav-links">
+          <a href="index.html">Home</a>
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
           <a href="mailto:support@joinberg.app">Support</a>
         </div>
-        <a href="index.html#download" class="nav-cta">Get the app</a>
-        <button
-          class="nav-hamburger"
-          aria-label="Open menu"
-          aria-expanded="false">
+        <a href="index.html" class="nav-cta">Get the app</a>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
       <div class="nav-mobile" aria-hidden="true">
+        <a href="index.html">Home</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
         <a href="mailto:support@joinberg.app">Support</a>
-        <a href="index.html#download" class="nav-mobile-cta">Get the app</a>
+        <a href="index.html" class="nav-mobile-cta">Get the app</a>
       </div>
     </nav>
 
@@ -234,29 +234,20 @@
     </main>
 
     <footer class="footer" aria-label="Site footer">
-      <div class="footer-body">
+      <div class="footer-inner container">
         <div class="footer-brand">
-          <a href="index.html" class="nav-wordmark" aria-label="Berg home"
-            >BERG</a
-          >
-          <p class="footer-tagline">
-            The group chat that becomes<br />the real thing.
-          </p>
+          <span class="nav-wordmark">Berg</span>
+          <span class="footer-tagline">Relationship maintenance, quietly</span>
         </div>
-        <div class="footer-col">
-          <p class="footer-col-label">Product</p>
-          <a href="index.html#download">Download</a>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="delete-data.html">Delete data</a>
+          <a href="csae-standards.html">Child safety</a>
           <a href="mailto:support@joinberg.app">Support</a>
         </div>
-        <div class="footer-col">
-          <p class="footer-col-label">Legal</p>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Service</a>
-          <a href="delete-data.html">Delete My Data</a>
-        </div>
-      </div>
-      <div class="footer-base">
-        <p>© 2025 Berg. All rights reserved.</p>
+        <span class="footer-copy">© 2026</span>
       </div>
     </footer>
 
@@ -272,7 +263,7 @@
         mobileNav.classList.toggle("open");
       });
 
-      const API_URL = "https://berg-api.onrender.com";
+      const API_URL = "https://api.joinberg.app";
 
       document
         .getElementById("deleteForm")

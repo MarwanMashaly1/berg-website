@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berg — The group chat that becomes the real thing.</title>
-  <meta name="description" content="Berg helps friend groups turn shared interests into real plans and memories worth keeping. Join circles, create motives, make it happen." />
+  <title>Berg — Stay close to the people who actually matter.</title>
+  <meta name="description" content="Berg removes the friction of 'what do I even say?' — one daily prompt turns compatible answers into real plans, and real plans into memories you keep." />
   <link rel="canonical" href="https://joinberg.app/" />
-  <meta property="og:title" content="Berg — The group chat that becomes the real thing." />
-  <meta property="og:description" content="Shared interests. Spontaneous plans. Memories worth keeping." />
+  <meta property="og:title" content="Berg — Stay close to the people who actually matter." />
+  <meta property="og:description" content="One daily prompt. A real match. A plan on the other side." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Space+Mono:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,22 +19,29 @@
   <!-- ── Nav ──────────────────────────────────────────────────────────────── -->
   <nav class="nav" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="/" class="nav-wordmark" aria-label="Berg home">BERG</a>
+      <div class="nav-brand">
+        <span class="nav-wordmark">Berg</span>
+        <span class="nav-edition">No. 214 · Est. 2026</span>
+      </div>
       <div class="nav-links">
+        <a href="#loop">The loop</a>
+        <a href="#circles">Circles</a>
+        <a href="#restraint">Restraint</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
-        <a href="mailto:support@joinberg.app">Support</a>
       </div>
-      <a href="#download" class="nav-cta">Get the app</a>
+      <a href="#get" class="nav-cta">Get the app</a>
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-mobile" aria-hidden="true">
+      <a href="#loop">The loop</a>
+      <a href="#circles">Circles</a>
+      <a href="#restraint">Restraint</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
-      <a href="mailto:support@joinberg.app">Support</a>
-      <a href="#download" class="nav-mobile-cta">Get the app</a>
+      <a href="#get" class="nav-mobile-cta">Get the app</a>
     </div>
   </nav>
 
@@ -41,267 +49,211 @@
 
     <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
     <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-bg-glow" aria-hidden="true"></div>
-      <div class="hero-inner container">
+      <div class="hero-inner">
 
         <div class="hero-content">
           <div class="hero-eyebrow reveal">
             <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-            Free to download · iOS &amp; Android
+            Relationship maintenance — not social media
           </div>
           <h1 class="hero-headline reveal stagger-1" id="hero-heading">
-            The group chat that<br />becomes <em>the real thing.</em>
+            Stay close to the <em>eight</em> people who actually matter.
           </h1>
           <p class="hero-sub reveal stagger-2">
-            Shared interests. Spontaneous plans.<br />Memories worth keeping.
+            Berg removes the friction of <em class="hero-sub-em">"what do I even say?"</em> — one daily prompt turns compatible answers into real plans, and real plans into memories you keep.
           </p>
-          <div class="hero-actions reveal stagger-3" id="download">
-            <a href="#" class="store-badge" aria-label="Download on the App Store">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-              </svg>
-              <span>
-                <small>Download on the</small>
-                <strong>App Store</strong>
-              </span>
-            </a>
-            <a href="#" class="store-badge" aria-label="Get it on Google Play">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M3 20.5v-17c0-.8.9-1.3 1.6-.9l15.5 8.5c.7.4.7 1.5 0 1.9L4.6 21.4C3.9 21.8 3 21.3 3 20.5z"/>
-              </svg>
-              <span>
-                <small>Get it on</small>
-                <strong>Google Play</strong>
-              </span>
-            </a>
+          <div class="hero-actions reveal stagger-3" id="get">
+            <a href="#" class="btn-primary" aria-label="Download on the App Store">Answer today's prompt →</a>
+            <a href="#loop" class="btn-ghost">See how it works</a>
+          </div>
+          <div class="hero-social-proof reveal stagger-4">
+            <div class="avatar-stack" aria-hidden="true">
+              <span class="av av-orange"></span>
+              <span class="av av-green"></span>
+              <span class="av av-purple"></span>
+            </div>
+            <span class="social-proof-text">Built for the 4–8 friends you keep drifting from</span>
           </div>
         </div>
 
-        <!-- Phone mockup -->
         <div class="hero-visual" aria-hidden="true">
-          <div class="phone-scene">
-          <div class="phone-floater">
-          <div class="phone-wrap">
+          <div class="hero-glow"></div>
+          <div class="phone-float">
             <div class="phone-frame">
+              <div class="phone-notch"></div>
               <div class="phone-screen">
-                <div class="app-ui">
-                  <div class="app-topbar">
-                    <span class="app-topbar-title">Discovery</span>
-                    <div class="app-topbar-av"></div>
+                <div class="app-bar">
+                  <span class="app-bar-title">Discovery</span>
+                  <div class="app-bar-av"></div>
+                </div>
+                <div class="app-prompt-card">
+                  <div class="app-prompt-label">TODAY'S PROMPT</div>
+                  <div class="app-prompt-q">If you had a free Sunday, you'd most likely…</div>
+                  <div class="app-prompt-opts">
+                    <div class="app-opt app-opt--active">🌳 Go outside somewhere</div>
+                    <div class="app-opt">🍜 Find a great restaurant</div>
+                    <div class="app-opt">🎬 Movie marathon at home</div>
                   </div>
-                  <div class="app-card-featured">
-                    <div class="app-card-featured-chip">TRENDING CIRCLE</div>
-                    <div class="app-card-featured-title">Sunday Hikers 🏔</div>
-                    <div class="app-card-featured-meta">24 members · 3 motives this week</div>
+                </div>
+                <div class="app-match-row">
+                  <div class="app-match-av av-orange-sm"></div>
+                  <div class="app-match-text">
+                    <div class="app-match-name">Alex R. matched</div>
+                    <div class="app-match-sub">Picked the same answer</div>
                   </div>
-                  <div class="app-row">
-                    <div class="app-card-sm">
-                      <div class="app-card-sm-icon">🍜</div>
-                      <div class="app-card-sm-title">Ramen Night</div>
-                      <div class="app-card-sm-meta">Fri · 7pm</div>
-                    </div>
-                    <div class="app-card-sm">
-                      <div class="app-card-sm-icon">🎵</div>
-                      <div class="app-card-sm-title">Jazz Club</div>
-                      <div class="app-card-sm-meta">Sat · 9pm</div>
-                    </div>
-                  </div>
-                  <div class="app-pill">Motives near you →</div>
+                  <div class="app-match-badge">⚡</div>
                 </div>
               </div>
-              <div class="phone-notch"></div>
             </div>
-
-            </div><!-- /phone-wrap -->
-
-            <!-- Floating badges -->
+            <!-- floating badges -->
             <div class="float-badge float-badge--tl">
-              <div class="avatar-stack">
-                <div class="av-chip av-o"></div>
-                <div class="av-chip av-p"></div>
-                <div class="av-chip av-g"></div>
+              <div class="fb-avatars">
+                <span class="av av-orange av-xs"></span>
+                <span class="av av-green av-xs"></span>
+                <span class="av av-purple av-xs"></span>
               </div>
-              <span>12 going tonight</span>
+              <span>3 friends matched</span>
             </div>
             <div class="float-badge float-badge--br">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2.5" aria-hidden="true">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span>4.8 · App Store</span>
-            </div>
-          </div><!-- /phone-floater -->
-          </div><!-- /phone-scene -->
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── Features ──────────────────────────────────────────────────────────── -->
-    <section class="section features" aria-labelledby="features-heading">
-      <div class="container">
-        <p class="section-label reveal">WHAT IS BERG</p>
-        <h2 class="section-title reveal stagger-1" id="features-heading">
-          Everything your group needs<br />to actually meet up.
-        </h2>
-        <div class="bento">
-
-          <!-- Large: Circles -->
-          <article class="bento-card reveal">
-            <div class="bento-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-              </svg>
-            </div>
-            <h3 class="bento-title">Circles</h3>
-            <p class="bento-desc">Join groups built around your interests — hiking, food, music, sport. Meet people worth knowing before you ever meet them in person.</p>
-            <span class="bento-chip">Interest-based groups</span>
-          </article>
-
-          <!-- Motives -->
-          <article class="bento-card reveal stagger-1">
-            <div class="bento-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-            </div>
-            <h3 class="bento-title">Motives</h3>
-            <p class="bento-desc">Real plans, real times, real places. No more threads that go nowhere. Just show up.</p>
-          </article>
-
-          <!-- Memories -->
-          <article class="bento-card bento-card--accent reveal stagger-2">
-            <div class="bento-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                <circle cx="12" cy="13" r="4"/>
-              </svg>
-            </div>
-            <h3 class="bento-title">Memories</h3>
-            <p class="bento-desc">Photos, vibe ratings, and shared memory cards after every outing. The app that lives after the moment.</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── How it works ───────────────────────────────────────────────────────── -->
-    <section class="section how" aria-labelledby="how-heading">
-      <div class="container">
-        <p class="section-label reveal">HOW IT WORKS</p>
-        <h2 class="section-title reveal stagger-1" id="how-heading">Three steps to a real night out.</h2>
-        <div class="steps">
-
-          <div class="step reveal">
-            <div class="step-bg-num" aria-hidden="true">1</div>
-            <div class="step-content">
-              <span class="step-tag">01</span>
-              <h3 class="step-title">Join Circles</h3>
-              <p class="step-desc">Pick circles that match your interests and meet people who are actually into the same things you are.</p>
+              <span class="fb-star">★</span>
+              <span>Real plans made today</span>
             </div>
           </div>
+        </div>
 
-          <div class="step reveal stagger-1">
-            <div class="step-bg-num" aria-hidden="true">2</div>
-            <div class="step-content">
-              <span class="step-tag">02</span>
-              <h3 class="step-title">Create Motives</h3>
-              <p class="step-desc">Post a plan — dinner Thursday, hike Saturday, spontaneous thing tonight. Invite the circle, see who's in.</p>
-            </div>
+      </div>
+    </section>
+
+    <!-- ── Marquee ────────────────────────────────────────────────────────── -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-inner">
+          <span>Answer</span><span class="dot dot-orange">·</span><em>Match</em><span class="dot dot-green">·</span><span>Motive</span><span class="dot dot-purple">·</span><em>Memory</em><span class="dot dot-orange">·</span><span>Answer</span><span class="dot dot-green">·</span><em>Match</em><span class="dot dot-purple">·</span><span>Motive</span><span class="dot dot-orange">·</span><em>Memory</em><span class="dot dot-green">·</span>
+        </span>
+        <span class="marquee-inner" aria-hidden="true">
+          <span>Answer</span><span class="dot dot-orange">·</span><em>Match</em><span class="dot dot-green">·</span><span>Motive</span><span class="dot dot-purple">·</span><em>Memory</em><span class="dot dot-orange">·</span><span>Answer</span><span class="dot dot-green">·</span><em>Match</em><span class="dot dot-purple">·</span><span>Motive</span><span class="dot dot-orange">·</span><em>Memory</em><span class="dot dot-green">·</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- ── The Loop (light band) ─────────────────────────────────────────── -->
+    <section id="loop" class="section-loop" aria-labelledby="loop-heading">
+      <div class="container">
+        <div class="loop-intro">
+          <div class="overline overline-rust reveal">The core loop</div>
+          <h2 class="section-heading section-heading-dark reveal stagger-1" id="loop-heading">
+            Four steps. Ten seconds of effort.<br />A real hangout on the other side.
+          </h2>
+          <p class="section-sub section-sub-dark reveal stagger-2">No proposer tax. The match surfaces asymmetrically, so nobody has to be the one who reaches out first.</p>
+        </div>
+
+        <div class="loop-grid reveal stagger-2">
+          <div class="loop-card">
+            <div class="loop-num" style="color:#B0623E;">01</div>
+            <div class="loop-icon" style="background:rgba(255,122,77,.16);">🗳️</div>
+            <div class="loop-title">Answer</div>
+            <p class="loop-desc">Everyone gets the same daily prompt. Pick one of 3–4 options in ten seconds — add a line if you feel like it.</p>
           </div>
-
-          <div class="step reveal stagger-2">
-            <div class="step-bg-num" aria-hidden="true">3</div>
-            <div class="step-content">
-              <span class="step-tag">03</span>
-              <h3 class="step-title">Make Memories</h3>
-              <p class="step-desc">Go. Do the thing. Then capture it — photos, ratings, vibe tags. Your social life, documented.</p>
-            </div>
+          <div class="loop-card">
+            <div class="loop-num" style="color:#3F7D5C;">02</div>
+            <div class="loop-icon" style="background:rgba(110,140,123,.2);">⚡</div>
+            <div class="loop-title">Match</div>
+            <p class="loop-desc">When a friend picks a compatible answer, it surfaces as a match — a reason to talk that already exists.</p>
           </div>
-
+          <div class="loop-card">
+            <div class="loop-num" style="color:#6A4CE0;">03</div>
+            <div class="loop-icon" style="background:rgba(169,154,216,.24);">📍</div>
+            <div class="loop-title">Motive</div>
+            <p class="loop-desc">Turn the match into a plan — venue suggestions, a time everyone votes on, RSVPs, and a chat for logistics.</p>
+          </div>
+          <div class="loop-card loop-card--dark">
+            <div class="loop-num" style="color:#FF7A4D;">04</div>
+            <div class="loop-icon" style="background:rgba(255,122,77,.2);">📷</div>
+            <div class="loop-title" style="color:#F6EDE5;">Memory</div>
+            <p class="loop-desc" style="color:#C9A593;">After the hang, drop photos, a vibe tag and a rating. It pins to your shared history — and resurfaces two weeks later.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Testimonials ───────────────────────────────────────────────────────── -->
-    <section class="section testimonials" aria-labelledby="testimonials-heading">
+    <!-- ── Pull quote ─────────────────────────────────────────────────────── -->
+    <section class="section-quote">
+      <div class="container container-sm">
+        <div class="overline overline-orange reveal">The problem Berg solves</div>
+        <blockquote class="pull-quote reveal stagger-1">
+          The moment right before you open WhatsApp — stuck on <em>what to say</em> or <em class="em-green">what to propose</em> — is where friendships quietly drift. Berg fills that gap for you.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ── Features ──────────────────────────────────────────────────────── -->
+    <section id="circles" class="section-features" aria-labelledby="features-heading">
       <div class="container">
-        <p class="section-label reveal">WHAT PEOPLE SAY</p>
-        <h2 class="section-title reveal stagger-1" id="testimonials-heading">
-          Actually used by real friend groups.
-        </h2>
-        <div class="testimonials-grid">
+        <div class="features-header reveal">
+          <h2 class="section-heading reveal" id="features-heading">Everything, kept small on purpose</h2>
+          <span class="features-sub">Depth over breadth</span>
+        </div>
 
-          <article class="testimonial reveal">
-            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="testimonial-text">"Finally an app that got us off the group chat and actually doing things. We've had 3 motives in the first week."</p>
-            <div class="testimonial-author">
-              <div class="testimonial-av av-or" aria-hidden="true"></div>
-              <div>
-                <div class="testimonial-name">Alex R.</div>
-                <div class="testimonial-role">Hiking circle member</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial reveal stagger-1">
-            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="testimonial-text">"Love that it's built around shared interests, not random people. The memory cards after events are genuinely fun."</p>
-            <div class="testimonial-author">
-              <div class="testimonial-av av-pu" aria-hidden="true"></div>
-              <div>
-                <div class="testimonial-name">Sarah M.</div>
-                <div class="testimonial-role">Food &amp; restaurant circle</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="testimonial reveal stagger-2">
-            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="testimonial-text">"The motives feature is perfect. People actually commit when there's a real plan instead of a vague 'we should hang.'"</p>
-            <div class="testimonial-author">
-              <div class="testimonial-av av-gr" aria-hidden="true"></div>
-              <div>
-                <div class="testimonial-name">Jordan K.</div>
-                <div class="testimonial-role">Weekend adventures circle</div>
-              </div>
-            </div>
-          </article>
-
+        <div class="features-grid">
+          <div class="feat-card reveal">
+            <div class="feat-icon">🔵</div>
+            <div class="feat-title">Circles</div>
+            <p class="feat-desc">Private friend groups with a 6-character join code, custom emoji, and an auto-created group chat. No public followers, ever.</p>
+          </div>
+          <div class="feat-card reveal stagger-1">
+            <div class="feat-icon">🗺️</div>
+            <div class="feat-title">Motives</div>
+            <p class="feat-desc">Nine plan types with real venue suggestions, date voting, RSVPs and a reminder two hours before. Planning without the group-chat chaos.</p>
+          </div>
+          <div class="feat-card reveal stagger-2">
+            <div class="feat-icon">💬</div>
+            <div class="feat-title">Follow-up DMs</div>
+            <p class="feat-desc">1:1 messages between confirmed friends — text, image, GIF — tied to the prompt you both answered. Context comes built in.</p>
+          </div>
+          <div class="feat-card reveal">
+            <div class="feat-icon">🧭</div>
+            <div class="feat-title">Friend-of-friend</div>
+            <p class="feat-desc">Suggestions weighted 60% on mutual friends — only people already inside your circles. Zero-mutual strangers never appear.</p>
+          </div>
+          <div class="feat-card reveal stagger-1">
+            <div class="feat-icon">🟢</div>
+            <div class="feat-title">Availability</div>
+            <p class="feat-desc">A quiet status — "down to hang", "busy", "ask me" — so friends know when you're actually free without anyone asking.</p>
+          </div>
+          <div class="feat-card reveal stagger-2">
+            <div class="feat-icon">🎞️</div>
+            <div class="feat-title">Memory cards</div>
+            <p class="feat-desc">Photos, vibe tags and ratings from every real hang — an artifact you keep, that gently resurfaces at T+14 days.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Download CTA ───────────────────────────────────────────────────────── -->
-    <section class="cta-section" aria-labelledby="cta-heading">
-      <div class="cta-glow" aria-hidden="true"></div>
+    <!-- ── Restraint manifesto ────────────────────────────────────────────── -->
+    <section id="restraint" class="section-restraint" aria-labelledby="restraint-heading">
       <div class="container">
-        <p class="section-label reveal">GET STARTED</p>
-        <h2 class="hero-headline reveal stagger-1" id="cta-heading">Ready to make it happen?</h2>
-        <p class="hero-sub reveal stagger-2">Free to download. Available on iOS and Android.</p>
-        <div class="hero-actions reveal stagger-3">
-          <a href="#" class="store-badge" aria-label="Download on the App Store">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-            </svg>
-            <span>
-              <small>Download on the</small>
-              <strong>App Store</strong>
-            </span>
-          </a>
-          <a href="#" class="store-badge" aria-label="Get it on Google Play">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M3 20.5v-17c0-.8.9-1.3 1.6-.9l15.5 8.5c.7.4.7 1.5 0 1.9L4.6 21.4C3.9 21.8 3 21.3 3 20.5z"/>
-            </svg>
-            <span>
-              <small>Get it on</small>
-              <strong>Google Play</strong>
-            </span>
-          </a>
+        <div class="restraint-card reveal">
+          <div class="restraint-glow" aria-hidden="true"></div>
+          <div class="restraint-body">
+            <div class="overline overline-orange">A deliberately quiet app</div>
+            <h2 class="restraint-heading" id="restraint-heading">No streaks. No confetti.<br />No feed to scroll.</h2>
+            <p class="restraint-sub">Berg is engineered to make itself unnecessary as fast as possible — to get you off the phone and into the room. We don't chase DAUs or session length. We measure exactly one thing:</p>
+            <div class="restraint-metric">
+              <span>prompts answered → real hangs with memories attached</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final CTA ──────────────────────────────────────────────────────── -->
+    <section class="section-cta" aria-labelledby="cta-heading">
+      <div class="container container-sm" style="text-align:center;">
+        <h2 class="cta-heading reveal" id="cta-heading">Stop drifting.<br />Start showing up.</h2>
+        <p class="cta-sub reveal stagger-1">Answer one prompt tonight. See who's on your wavelength by morning.</p>
+        <div class="cta-actions reveal stagger-2">
+          <a href="#" class="btn-primary" aria-label="Download on the App Store">Download for iOS</a>
+          <a href="#" class="btn-ghost" aria-label="Get it on Google Play">Download for Android</a>
         </div>
       </div>
     </section>
@@ -310,26 +262,22 @@
 
   <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
   <footer class="footer" aria-label="Site footer">
-    <div class="footer-body">
+    <div class="footer-inner container">
       <div class="footer-brand">
-        <a href="/" class="nav-wordmark" aria-label="Berg home">BERG</a>
-        <p class="footer-tagline">The group chat that becomes<br />the real thing.</p>
+        <span class="nav-wordmark">Berg</span>
+        <span class="footer-tagline">Relationship maintenance, quietly</span>
       </div>
-      <div class="footer-col">
-        <p class="footer-col-label">Product</p>
-        <a href="#download">Download</a>
+      <div class="footer-links">
+        <a href="#loop">The loop</a>
+        <a href="#circles">Features</a>
+        <a href="#restraint">Restraint</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="delete-data.html">Delete data</a>
+        <a href="csae-standards.html">Child safety</a>
         <a href="mailto:support@joinberg.app">Support</a>
       </div>
-      <div class="footer-col">
-        <p class="footer-col-label">Legal</p>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="delete-data.html">Delete My Data</a>
-        <a href="csae-standards.html">Child Safety</a>
-      </div>
-    </div>
-    <div class="footer-base">
-      <p>© 2025 Berg. All rights reserved.</p>
+      <span class="footer-copy">© 2026</span>
     </div>
   </footer>
 
@@ -340,11 +288,9 @@
       entries => entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
       }),
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
     reveals.forEach(el => io.observe(el));
-
-    // Honour reduced-motion — skip animation entirely
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       reveals.forEach(el => el.classList.add('revealed'));
     }
@@ -359,8 +305,6 @@
       hamburger.classList.toggle('open');
       mobileNav.classList.toggle('open');
     });
-
-    // Close mobile nav on link click
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       hamburger.setAttribute('aria-expanded', 'false');
       mobileNav.setAttribute('aria-hidden', 'true');

@@ -708,6 +708,164 @@ img { max-width: 100%; display: block; }
   display: inline-block;
 }
 
+/* ── Hero founding note ──────────────────────────────────────────────────── */
+.hero-founding-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.hero-founding-note .fn-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Founding circles ────────────────────────────────────────────────────── */
+.section-founding { padding: 20px 0 80px; }
+.founding-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: start;
+}
+.founding-heading {
+  font-family: var(--ff-serif);
+  font-weight: 500;
+  font-size: clamp(32px, 4.2vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -.015em;
+  color: var(--text);
+  margin-top: 14px;
+}
+.founding-heading em { font-style: italic; color: var(--accent); }
+.founding-body {
+  font-family: var(--ff-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-sec);
+  margin-top: 20px;
+}
+.founding-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 26px;
+}
+.founding-perk {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--ff-body);
+  font-size: 15px;
+  color: var(--text-sec);
+}
+.founding-perk::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  transform: translateY(-3px);
+}
+.founding-perk strong { color: var(--text); font-weight: 600; }
+.founding-cost {
+  font-family: var(--ff-body);
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-top: 22px;
+}
+.founding-count {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 28px;
+  min-height: 1.4em;
+}
+.founding-count strong { color: var(--text); font-weight: 700; }
+
+/* Capture form card */
+.founding-form-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  padding: 32px;
+}
+.founding-form-title {
+  font-family: var(--ff-serif);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.field { margin-bottom: 16px; }
+.field label {
+  display: block;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 7px;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  font-family: var(--ff-body);
+  font-size: 15px;
+  color: var(--text);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: border-color 160ms, background 160ms;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: var(--text-muted); }
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: rgba(255,122,77,.55);
+  background: rgba(255,255,255,.08);
+}
+.field textarea { resize: vertical; min-height: 76px; line-height: 1.5; }
+.field-hint {
+  font-family: var(--ff-body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.founding-submit { width: 100%; text-align: center; border: none; cursor: pointer; margin-top: 6px; }
+.founding-submit:disabled { opacity: .55; cursor: not-allowed; transform: none !important; }
+.form-msg {
+  font-family: var(--ff-body);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 14px;
+}
+.form-msg--error { color: #E8917A; }
+.form-msg--success {
+  font-family: var(--ff-serif);
+  font-size: 17px;
+  color: var(--text);
+}
+.form-msg--success strong { color: var(--accent); }
+
 /* ── Final CTA ───────────────────────────────────────────────────────────── */
 .section-cta { padding: 40px 0 100px; }
 .cta-heading {
@@ -795,6 +953,7 @@ img { max-width: 100%; display: block; }
     gap: 40px;
   }
   .hero-visual { order: -1; }
+  .founding-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-glow { width: 260px; height: 260px; margin: -130px 0 0 -130px; }
   .phone-frame { width: 220px; }
   .float-badge { display: none; }
@@ -819,6 +978,7 @@ img { max-width: 100%; display: block; }
   .footer-links { gap: 16px; }
   .pull-quote { font-size: 24px; }
   .restraint-card { padding: 32px 24px; }
+  .founding-form-card { padding: 24px 20px; }
 }
 
 /* ── Legal pages ─────────────────────────────────────────────────────────── */

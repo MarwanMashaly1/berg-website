@@ -114,7 +114,9 @@ img { max-width: 100%; display: block; }
   background: var(--accent);
   padding: 16px 26px;
   border-radius: 26px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   box-shadow: 0 12px 34px -12px rgba(255,122,77,.7);
   transition: transform 160ms var(--ease), box-shadow 160ms var(--ease);
 }
@@ -130,11 +132,26 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(246,237,229,.28);
   padding: 16px 24px;
   border-radius: 26px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   transition: border-color 160ms, background 160ms;
 }
 .btn-ghost:hover { border-color: rgba(246,237,229,.5); background: rgba(246,237,229,.06); }
 .btn-ghost:active { transform: scale(0.97); }
+
+/* Store badges — icon + two-line label, reusing the primary/ghost button shells above */
+.btn-store { padding-top: 11px; padding-bottom: 11px; text-align: left; }
+.btn-store-icon { width: 24px; height: 24px; flex-shrink: 0; }
+.btn-store-eyebrow {
+  display: block;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 9px;
+  letter-spacing: .02em;
+  opacity: .8;
+  margin-bottom: 2px;
+}
 
 /* ── Nav ─────────────────────────────────────────────────────────────────── */
 .nav {

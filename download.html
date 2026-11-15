@@ -21,6 +21,7 @@
       display: flex; align-items: center; justify-content: center;
     }
     .wrap { max-width: 400px; width: 100%; padding: 32px 24px; text-align: center; }
+    .logo { display: block; width: 96px; height: 96px; margin: 0 auto 18px; border-radius: 22px; box-shadow: 0 14px 40px -12px rgba(0,0,0,0.5); }
     .wordmark { font-family: monospace; font-weight: 700; letter-spacing: 0.3em; font-size: 13px; color: #C9A593; }
     h1 { margin-top: 24px; font-family: Georgia, serif; font-style: italic; font-weight: 500; font-size: 30px; line-height: 1.2; }
     .actions { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
@@ -36,6 +37,7 @@
 <body>
   <!-- Visible only if the redirect doesn't happen (desktop, or JS disabled). -->
   <main class="wrap">
+    <img class="logo" src="/icon.png" alt="Berg" width="96" height="96" />
     <div class="wordmark">BERG</div>
     <h1 id="title">Get Berg</h1>
     <div class="actions">

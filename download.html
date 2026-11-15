@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Berg</title>
+  <meta name="description" content="Download Berg on the App Store or Google Play." />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="Get Berg" />
+  <meta property="og:description" content="One question a day, answered with the people you actually care about." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://joinberg.app/icon.png" />
+  <link rel="icon" href="/icon.ico" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #2A1B2A 0%, #4A2A2C 74%, #5A3326 100%) fixed;
+      color: #F6EDE5;
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .wrap { max-width: 400px; width: 100%; padding: 32px 24px; text-align: center; }
+    .wordmark { font-family: monospace; font-weight: 700; letter-spacing: 0.3em; font-size: 13px; color: #C9A593; }
+    h1 { margin-top: 24px; font-family: Georgia, serif; font-style: italic; font-weight: 500; font-size: 30px; line-height: 1.2; }
+    .actions { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .btn {
+      display: block; padding: 15px 20px; border-radius: 14px;
+      font-weight: 600; font-size: 16px; text-decoration: none;
+      background: #FF7A4D; color: #2A1517;
+    }
+    .btn.secondary { background: transparent; color: #F6EDE5; border: 1px solid rgba(246,237,229,0.2); }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <!-- Visible only if the redirect doesn't happen (desktop, or JS disabled). -->
+  <main class="wrap">
+    <div class="wordmark">BERG</div>
+    <h1 id="title">Get Berg</h1>
+    <div class="actions">
+      <a class="btn" id="btn-ios" href="https://apps.apple.com/us/app/berg/id6768094340">Download on the App Store</a>
+      <a class="btn secondary" id="btn-android" href="https://play.google.com/store/apps/details?id=app.berg.social">Get it on Google Play</a>
+    </div>
+  </main>
+
+  <script>
+  (function () {
+    var APP_STORE = 'https://apps.apple.com/us/app/berg/id6768094340';
+    var PLAY_ID = 'app.berg.social';
+    var $ = function (id) { return document.getElementById(id); };
+
+    // Optional campaign tag: /download?ref=instagram → Play Store gets utm_source=instagram
+    var ref = new URLSearchParams(location.search).get('ref');
+    var playUrl = 'https://play.google.com/store/apps/details?id=' + PLAY_ID +
+      (ref ? '&referrer=' + encodeURIComponent('utm_source=' + ref) : '');
+    $('btn-android').href = playUrl;
+
+    var ua = navigator.userAgent || '';
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    if (isAndroid) {
+      $('btn-ios').hidden = true;
+      $('btn-android').className = 'btn';
+      location.replace(playUrl);
+    } else if (isIOS) {
+      $('btn-android').hidden = true;
+      location.replace(APP_STORE);
+    } else {
+      $('title').textContent = 'Get Berg on your phone';
+    }
+  })();
+  </script>
+</body>
+</html>

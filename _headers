@@ -1,0 +1,4 @@
+# Apple expects the app-site-association file as JSON (it has no extension, so Netlify
+# currently serves it as text/plain).
+/.well-known/apple-app-site-association
+  Content-Type: application/json

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're invited to Berg</title>
+  <meta name="description" content="A friend invited you to Berg — one question a day, answered with the people you actually care about." />
+  <meta name="robots" content="noindex" />
+  <!-- Link previews (WhatsApp / iMessage) are fetched without running JS, so they still get
+       these tags even though real visitors are redirected straight away. -->
+  <meta property="og:title" content="You're invited to Berg" />
+  <meta property="og:description" content="Answer today's question with me — see if we pick the same." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://joinberg.app/icon.png" />
+  <link rel="icon" href="/icon.ico" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #2A1B2A 0%, #4A2A2C 74%, #5A3326 100%) fixed;
+      color: #F6EDE5;
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .wrap { max-width: 400px; width: 100%; padding: 32px 24px; text-align: center; }
+    .wordmark { font-family: monospace; font-weight: 700; letter-spacing: 0.3em; font-size: 13px; color: #C9A593; }
+    h1 { margin-top: 24px; font-family: Georgia, serif; font-style: italic; font-weight: 500; font-size: 30px; line-height: 1.2; }
+    .actions { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .btn {
+      display: block; padding: 15px 20px; border-radius: 14px;
+      font-weight: 600; font-size: 16px; text-decoration: none;
+      background: #FF7A4D; color: #2A1517;
+    }
+    .btn.secondary { background: transparent; color: #F6EDE5; border: 1px solid rgba(246,237,229,0.2); }
+    .code { margin-top: 22px; font-size: 13px; color: #9C8278; }
+    .code strong { display: block; margin-top: 6px; font-family: monospace; font-size: 20px; letter-spacing: 0.2em; color: #F6EDE5; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <!-- Shown only if the redirect doesn't happen (desktop, or an in-app browser that blocks it). -->
+  <main class="wrap">
+    <div class="wordmark">BERG</div>
+    <h1 id="title">Opening Berg…</h1>
+    <div class="actions">
+      <a class="btn" id="btn-ios" href="https://apps.apple.com/us/app/berg/id6768094340">Get Berg on the App Store</a>
+      <a class="btn" id="btn-android" href="https://play.google.com/store/apps/details?id=app.berg.social">Get Berg on Google Play</a>
+    </div>
+    <p class="code" id="code-box" hidden>Your invite code — enter it when you sign up:<strong id="code"></strong></p>
+  </main>
+
+  <script>
+  (function () {
+    var PLAY_ID = 'app.berg.social';
+    var APP_STORE = 'https://apps.apple.com/us/app/berg/id6768094340';
+
+    // Netlify rewrites /join/<code> and /join/circle/<code> to this file; the original path
+    // is still in location.pathname.
+    var parts = location.pathname.split('/').filter(Boolean);
+    var isCircle = parts[1] === 'circle';
+    var rawCode = isCircle ? parts[2] : parts[1];
+    var code = rawCode && /^[A-Za-z0-9_-]{3,32}$/.test(rawCode) ? rawCode.toUpperCase() : null;
+
+    var ua = navigator.userAgent || '';
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var $ = function (id) { return document.getElementById(id); };
+
+    // Android: the Play link carries the code in `referrer`, which the app reads on first
+    // launch (Play Install Referrer) — that's how the invite survives the install. intent://
+    // opens the app directly if it's installed, otherwise falls back to that Play link.
+    var referrer = code ? (isCircle ? 'circle=' : 'invite=') + code : '';
+    var playUrl = 'https://play.google.com/store/apps/details?id=' + PLAY_ID +
+      (referrer ? '&referrer=' + encodeURIComponent(referrer) : '');
+    var appPath = code ? (isCircle ? 'join/circle/' + code : 'join/' + code) : '';
+    var androidUrl = code
+      ? 'intent://' + appPath + '#Intent;scheme=berg;package=' + PLAY_ID +
+        ';S.browser_fallback_url=' + encodeURIComponent(playUrl) + ';end'
+      : playUrl;
+    $('btn-android').href = androidUrl;
+
+    if (code) {
+      $('code').textContent = code;
+      $('code-box').hidden = false;
+    }
+
+    // If Berg is installed, iOS opens /join/* in the app via universal links before this page
+    // ever loads — so reaching it on iPhone means "not installed" (or an in-app browser).
+    if (isAndroid) {
+      $('btn-ios').hidden = true;
+      location.replace(androidUrl);
+    } else if (isIOS) {
+      $('btn-android').hidden = true;
+      // iOS has no install referrer, so record this click (network + screen size + code) for
+      // the freshly installed app to claim on first launch. sendBeacon with text/plain is a
+      // "simple" request — no CORS preflight — and is delivered even as the page navigates.
+      if (code && navigator.sendBeacon) {
+        var w = Math.round(screen.width), h = Math.round(screen.height);
+        var body = JSON.stringify({
+          kind: isCircle ? 'circle' : 'friend',
+          code: code,
+          screen: Math.min(w, h) + 'x' + Math.max(w, h),
+        });
+        try {
+          navigator.sendBeacon('https://api.joinberg.app/api/invite-clicks',
+            new Blob([body], { type: 'text/plain' }));
+        } catch (e) { /* the code in the message is the fallback */ }
+      }
+      location.replace(APP_STORE);
+    } else {
+      $('title').textContent = 'Get Berg on your phone';
+      $('btn-android').className = 'btn secondary';
+    }
+  })();
+  </script>
+</body>
+</html>

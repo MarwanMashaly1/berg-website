@@ -1,0 +1,9 @@
+# Invite links — /join/<code> and /join/circle/<code> both render join.html (200 = rewrite,
+# the URL stays the same so the page can read the code from it). Circle rule first: Netlify
+# uses the first match.
+/join/circle/*   /join.html   200
+/join/*          /join.html   200
+
+# Universal download link - detects iOS / Android and sends people to the right store.
+/download   /download.html   200
+/get        /download.html   200
